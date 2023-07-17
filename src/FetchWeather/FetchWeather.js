@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-
+import CardWeather from "../Cards/CardWeather";
 function FetchWeather() {
-  const [city, setCity] = useState("");
   const [weather, setWeather] = useState(null);
+  const [city, setCity] = useState("");
+
   const [error, setError] = useState(null);
 
   const handleInputChange = (e) => {
@@ -44,11 +45,11 @@ function FetchWeather() {
       />
       {error && <p>{error}</p>}
       {weather && (
-        <div>
-          <h2>{weather.location.name}</h2>
-          <p>Temperature: {weather.current.temp_c}°C</p>
-          <p>Condition: {weather.current.condition.text}</p>
-        </div>
+        <CardWeather
+          temperature={weather.current.temp_c}
+          location={weather.location.name}
+          condition={weather.current.condition.text}
+        />
       )}
     </div>
   );
