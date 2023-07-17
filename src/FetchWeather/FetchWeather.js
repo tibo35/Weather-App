@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CardWeather from "../Cards/CardWeather";
 import InputLocation from "../InputLocation/InputLocation";
 
 function FetchWeather() {
   const [weather, setWeather] = useState(null);
   const [city, setCity] = useState("");
-
   const [error, setError] = useState(null);
 
   const handleInputChange = (e) => {
     setCity(e.target.value);
-    fetchWeather();
   };
 
   const fetchWeather = () => {
@@ -36,7 +34,11 @@ function FetchWeather() {
         setWeather(null);
       });
   };
-
+  useEffect(() => {
+    if (city) {
+      fetchWeather();
+    }
+  }, [city]);
   return (
     <div>
       <InputLocation onChange={handleInputChange} city={city} />
@@ -46,6 +48,8 @@ function FetchWeather() {
           temperature={weather.current.temp_c}
           location={weather.location.name}
           condition={weather.current.condition.text}
+          conditionIcon={weather.current.condition.icon}
+          isDayTime={weather.current.is_day} // 1 means it's day, 0 means it's night
         />
       )}
     </div>

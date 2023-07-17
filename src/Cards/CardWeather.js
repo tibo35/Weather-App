@@ -1,13 +1,22 @@
 import React from "react";
 import style from "./CardWeather.css";
-import WeatherIcon from "../resources/Moon cloud mid rain.png";
 
-function CardWeather({ temperature, location, condition }) {
+function CardWeather({
+  temperature,
+  location,
+  condition,
+  conditionIcon,
+  isDayTime,
+}) {
+  const imageName = conditionIcon.split("/").pop();
+  const iconPath = `/project_resources/${
+    isDayTime ? "day" : "night"
+  }/${imageName}`;
   return (
     <div className="weather-card">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="280"
+        width="302"
         height="184"
         viewBox="0 0 342 175"
         fill="none">
@@ -16,11 +25,11 @@ function CardWeather({ temperature, location, condition }) {
           fill="url(#paint0_linear_503_87)"
         />
         <image
-          x="170"
+          x="140"
           y="15"
           width="130"
           height="130"
-          xlinkHref={WeatherIcon}
+          href={conditionIcon}
           preserveAspectRatio="xMinYMin meet"
         />
         <text x="20" y="70" className="weather-temperature">

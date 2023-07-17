@@ -4,17 +4,27 @@
   align-items: center;
   gap: 20px;
 }
+
 .weather-location {
   fill: #fff;
   font-size: 20px;
 }
+
 .weather-temperature {
   fill: #fff;
   font-size: 40px;
   font-weight: bold;
 }
+
 .weather-condition {
   fill: #fff;
   font-size: 20px;
   margin-left: 389px;
+}
+
+.weather-icon {
+  /* Add styles for the weather icon */
+  width: 130px;
+  height: 130px;
+  fill: #fff;
 }
