@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./CardWeather.css";
+import plusBtn from "../resources/plus button.png";
 
 function CardWeather({
   temperature,
@@ -32,6 +33,7 @@ function CardWeather({
           href={conditionIcon}
           preserveAspectRatio="xMinYMin meet"
         />
+
         <text x="20" y="70" className="weather-temperature">
           {temperature}°C
         </text>
@@ -41,6 +43,7 @@ function CardWeather({
         <text x="20" y="130" className="weather-condition">
           {condition}
         </text>
+
         <defs>
           <linearGradient
             id="paint0_linear_503_87"
@@ -54,6 +57,9 @@ function CardWeather({
           </linearGradient>
         </defs>
       </svg>
+      <button className="plus-btn">
+        <img src={plusBtn} alt="plus button" width="70" height="70" />
+      </button>
     </div>
   );
 }
