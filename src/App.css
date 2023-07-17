@@ -41,3 +41,9 @@
     transform: rotate(360deg);
   }
 }
+h1 {
+  color: white;
+  font-size: 58px;
+  text-align: center;
+  font-weight: bold;
+}

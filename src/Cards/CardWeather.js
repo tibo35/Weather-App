@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./CardWeather.css";
 import plusBtn from "../resources/plus button.png";
+import Modal from "../Cards/Modal/Modal";
 
 function CardWeather({
   temperature,
@@ -13,6 +14,9 @@ function CardWeather({
   const iconPath = `/project_resources/${
     isDayTime ? "day" : "night"
   }/${imageName}`;
+
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className="weather-card">
       <svg
@@ -57,9 +61,16 @@ function CardWeather({
           </linearGradient>
         </defs>
       </svg>
-      <button className="plus-btn">
-        <img src={plusBtn} alt="plus button" width="70" height="70" />
+      <button className="plus-btn" onClick={() => setShowModal(true)}>
+        <img
+          className="plus-img"
+          src={plusBtn}
+          alt="plus button"
+          width="70"
+          height="70"
+        />
       </button>
+      <Modal showModal={showModal} setShowModal={setShowModal} />
     </div>
   );
 }
