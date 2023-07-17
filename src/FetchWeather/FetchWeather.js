@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import CardWeather from "../Cards/CardWeather";
+import InputLocation from "../InputLocation/InputLocation";
+
 function FetchWeather() {
   const [weather, setWeather] = useState(null);
   const [city, setCity] = useState("");
@@ -37,12 +39,7 @@ function FetchWeather() {
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="search for a city"
-        value={city}
-        onChange={handleInputChange}
-      />
+      <InputLocation onChange={handleInputChange} city={city} />
       {error && <p>{error}</p>}
       {weather && (
         <CardWeather
