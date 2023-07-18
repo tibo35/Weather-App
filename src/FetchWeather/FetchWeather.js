@@ -63,6 +63,7 @@ function FetchWeather() {
       {weather && forecast && (
         <div>
           <CardWeather
+            date={weather.location.localtime}
             temperature={weather.current.temp_c}
             location={weather.location.name}
             condition={weather.current.condition.text}
@@ -72,7 +73,7 @@ function FetchWeather() {
           <div>
             {forecast.forecast.forecastday.map((day) => (
               <CardWeather
-                key={day.date}
+                date={day.date}
                 temperature={day.day.avgtemp_c}
                 location={weather.location.name}
                 condition={day.day.condition.text}
