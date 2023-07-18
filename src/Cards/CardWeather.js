@@ -11,7 +11,11 @@ function CardWeather({
 }) {
   const dayOfWeek = new Date(date).toLocaleDateString("en-US", {
     weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
   });
+
   const dayOfWeekStg = dayOfWeek.slice(0, 3);
 
   return (
@@ -28,8 +32,8 @@ function CardWeather({
             fill="url(#paint0_linear_503_87)"
           />
           <image
-            x="140"
-            y="15"
+            x="190"
+            y="50"
             width="130"
             height="130"
             href={conditionIcon}
@@ -37,7 +41,7 @@ function CardWeather({
           />
 
           <text x="20" y="70" className="weather-temperature">
-            {temperature}°C
+            {temperature}
           </text>
           <text x="20" y="100" className="weather-location">
             {location}
