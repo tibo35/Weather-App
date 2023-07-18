@@ -61,7 +61,7 @@ function CardWeather({
           </linearGradient>
         </defs>
       </svg>
-      <button className="plus-btn" onClick={() => setShowModal(true)}>
+      {/*<button className="plus-btn" onClick={() => setShowModal(true)}>
         <img
           className="plus-img"
           src={plusBtn}
@@ -69,7 +69,7 @@ function CardWeather({
           width="70"
           height="70"
         />
-      </button>
+  </button>*/}
       <Modal showModal={showModal} setShowModal={setShowModal} />
     </div>
   );

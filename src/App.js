@@ -1,12 +1,12 @@
 import React from "react";
-import FetchWeather from "./FetchWeather/FetchWeather";
+import WeatherAndForecast from "./FetchWeather/FetchWeather";
 import "./App.css";
 
 function App() {
   return (
     <div>
       <h1>Hello Weather</h1>
-      <FetchWeather />
+      <WeatherAndForecast />
     </div>
   );
 }
