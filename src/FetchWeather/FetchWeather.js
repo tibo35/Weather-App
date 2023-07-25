@@ -108,12 +108,11 @@ function FetchWeather() {
           </div>
         </div>
       )}
-      <div>
-        {/* Render 3 empty cards unconditionally */}
+      {/* <div>
         {[...Array(3)].map((_, index) => (
           <CardWeather key={index} />
         ))}
-      </div>
+      </div>*/}
     </div>
   );
 }
